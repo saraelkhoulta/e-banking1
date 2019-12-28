@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">relevé du compte</div>
+
+    <div class="panel-body">
+      <table *ngIf="op" class="table table-striped">
+        <tr>
+          <th>ID Operation</th>
+          <th>Compte Beneficiaire</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Montant</th>
+          <th>num Facture</th>
+        </tr>
+        <tr *ngFor="let p of op">
+          <td>{{ p.idOperation }}</td>
+          <td>{{ p.idCompteBeneficiaire }}</td>
+          <td>{{ p.Type }}</td>
+          <td>{{ p.Date }}</td>
+          <td>{{ p.montant }}</td>
+          <td>{{ p.numFacture }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

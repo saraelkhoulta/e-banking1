@@ -1,0 +1,111 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" *ngIf="!isAuthenticated()" routerLink="/login" >login</a>
+    <a class="navbar-brand" *ngIf="isAuthenticated()" (click)="logOut()" >logout</a>
+  
+    <!-- Links -->
+    <ul class="navbar-nav" *ngIf="isAuthenticated()">
+     
+      <li class="nav-item">
+        <a class="nav-link" href="#">Vous etes connecte</a>
+      </li>
+      <li class="nav-item" *ngIf="isAdmin()">
+        <a class="nav-link"  routerLink="/test" >Admin</a>
+      </li>
+      <li class="nav-item" *ngIf="isUser()">
+        <a class="nav-link" href="#">User</a>
+      </li>
+  
+    </ul>
+  </nav>
+    <!-- <app-login></app-login> -->
+    <div class="col-12">
+  
+        <router-outlet></router-outlet>
+    </div>
+  
+<div class="col-md-4">
+    <div class="login-form">
+        <form  #f="ngForm" (ngSubmit)="onSaveOffr(f.value)">
+            <h2 class="text-center">Ajouter une categorie</h2>       
+            <!-- <div class="form-group">
+                <input type="text" class="form-control" placeholder="idOffre"  id="idOffre" name="idOffre" ngModel required="required">
+            </div> -->
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="nom"  id="nom" name="nom" ngModel  required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="prenom"  id="prenom" name="prenom" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="cin"  id="cin" name="cin" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="type"  id="type" name="type" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="idUser"  id="idUser" name="idUser" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="tel"  id="tel" name="tel" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="adresse"  id="adresse" name="adresse" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="nomComplet"  id="nomComplet" name="nomComplet" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="domaine"  id="domaine" name="domaine" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="actif"  id="actif" name="actif" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="idBo"  id="idBo" name="idBo" ngModel required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="siret"  id="siret" name="siret" ngModel required="required">
+            </div>
+           
+        
+           
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Ajouter</button>
+            </div>
+                  
+        </form>
+    </div>
+
+ </div>
+<h1>Liste des abonnees</h1>
+ <div class="col-md-4">
+    <table class="table" *ngIf="categories">
+        <thead>
+          <tr>
+            <th scope="col">idAbonne</th>
+            <th scope="col">nom</th>
+            <th scope="col">prenom</th>
+            <th scope="col">cin</th>
+            <th scope="col">Action</th>
+         
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of categories">
+            <th>{{ c.idAbonne }}</th>
+            <th>{{ c.nom }}</th>
+            <th>{{ c.prenom }}</th>
+            <th>{{ c.cin }}</th>
+            <td><button (click)="OnDeleteOffr(c)">Delete</button></td>
+     
+          </tr>
+         
+        </tbody>
+      </table>
+      
+ </div>
+
+
+      

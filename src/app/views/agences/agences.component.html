@@ -1,0 +1,90 @@
+
+    <div class="card">
+        <div class="card-header">
+          <strong>Add Agence</strong>
+        </div>
+        <form #todoForm = "ngForm" (submit)="doSubmit(user)">
+          <div class="card-body">
+            <div class="form-group">
+              <label class="form-col-form-label" for="in1">Location</label>
+              <input type="text" class="form-control " id="in1" name="nom" placeholder="name" [(ngModel)]='user.nom'>
+              
+            </div>
+            <div class="form-group">
+              <label class="form-col-form-label" for="i1">DG</label>
+              <input type="text" class="form-control" id="i1" name="prenom" placeholder="last name" [(ngModel)]='user.prenom'>
+            
+              
+            </div>
+            <div class="btn-group" dropdown [isOpen]="status.isOpen" (isOpenChange)="change($event)" placement="top">
+              <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+                BO dans agence <span class="caret"></span>
+              </button>
+              <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+                </li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Something else
+                  here</a></li>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      
+      <div class="card-footer">
+        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+        <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+      </div>
+    </div>
+    
+              
+   
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> All Agences
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered table-striped table-sm">
+              <thead>
+                <tr >
+                  <th>id</th>
+                  <th>nom</th>
+                  <th>prenom</th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor = "let todo of user">
+                  <td>{{todo.id}}</td>
+                  <td>{{todo.nom}}</td>
+                  <td>{{todo.prenom}}</td>
+               
+                
+                  <td>
+                  
+                    <button class="btn btn-pill  btn-block btn-primary" (click)="doUpdate(todo)">update</button>
+                  </td>
+                  <td> <button class="btn btn-pill btn-block btn-warning" (click)="doDelete(todo)">delete</button></td>
+                </tr>
+               
+                 
+              </tbody>
+            </table>
+            <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+     
