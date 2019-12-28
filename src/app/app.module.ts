@@ -46,10 +46,6 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { CompteAbonneComponent } from './views/compte-abonne/compte-abonne.component';
-import { CarteAbonneComponent } from './views/carte-abonne/carte-abonne.component';
-import { ReleveAbonneComponent } from './views/releve-abonne/releve-abonne.component';
-import { ModifierCarteAbonneComponent } from './views/modifier-carte-abonne/modifier-carte-abonne.component';
 
 @NgModule({
   imports: [
@@ -81,11 +77,7 @@ import { ModifierCarteAbonneComponent } from './views/modifier-carte-abonne/modi
     P500Component,
     LoginComponent,
     RegisterComponent,
-    TestComponent,
-    CompteAbonneComponent,
-    CarteAbonneComponent,
-    ReleveAbonneComponent,
-    ModifierCarteAbonneComponent
+    TestComponent
   ],
   providers: [
     {

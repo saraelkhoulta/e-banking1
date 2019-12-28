@@ -29,11 +29,11 @@ export class AuthentificationService {
     this.jwt = jwt;
     console.log('saving token ' + this.jwt);
 
-    this.parseJWT();
+    // this.parseJWT();
   }
   loadToken() {
     this.jwt = localStorage.getItem('token');
-    this.parseJWT();
+    // this.parseJWT();
   }
 
   parseJWT() {

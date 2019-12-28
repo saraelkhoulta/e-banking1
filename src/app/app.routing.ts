@@ -9,34 +9,11 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { TestComponent } from './views/test/test.component';
-import { UsersComponent } from './views/users/users.component';
-import { Abonne } from './collections/Abonne';
-import { CompteAbonneComponent } from './views/compte-abonne/compte-abonne.component';
-import { ReleveAbonneComponent } from './views/releve-abonne/releve-abonne.component';
-import { CarteAbonneComponent } from './views/carte-abonne/carte-abonne.component';
-import { ModifierCarteAbonneComponent } from './views/modifier-carte-abonne/modifier-carte-abonne.component';
 
 export const routes: Routes = [
   {
-    path: 'liste',
-    loadChildren: () => import('./views/compte-abonne/compte-abonne.module').then(m => m.CompteAbonneModule)
-  },
-  {
-    path: 'releve/:id',
-    loadChildren: () => import('./views/releve-abonne/releve-abonne.module').then(m => m.ReleveAbonneModule)
-  },
-  {
-    path: 'carte/:id',
-    loadChildren: () => import('./views/carte-abonne/carte-abonne.module').then(m => m.CarteAbonneModule)
-  },
-  {
-    path: 'updateCarte/:id',
-    loadChildren: () =>
-      import('./views/modifier-carte-abonne/modifier-carte-abonne.module').then(m => m.ModifierCarteAbonneModule)
-  },
-  {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'liste',
     pathMatch: 'full'
   },
   {
@@ -118,7 +95,23 @@ export const routes: Routes = [
       {
         path: 'charts',
         loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
-      }
+      },
+      {
+        path: 'liste',
+        loadChildren: () => import('./views/compte-abonne/compte-abonne.module').then(m => m.CompteAbonneModule)
+      },
+      {
+        path: 'releve/:id',
+        loadChildren: () => import('./views/releve-abonne/releve-abonne.module').then(m => m.ReleveAbonneModule)
+      },
+      {
+        path: 'carte/:id',
+        loadChildren: () => import('./views/carte-abonne/carte-abonne.module').then(m => m.CarteAbonneModule)
+      },
+      {
+        path: 'updateCarte/:id',
+        loadChildren: () => import('./views/modifier-carte-abonne/modifier-carte-abonne.module').then(m => m.ModifierCarteAbonneModule)
+      },
     ]
   },
   { path: '**', component: P404Component }
