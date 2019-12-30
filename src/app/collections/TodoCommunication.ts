@@ -15,7 +15,7 @@ export class TodoCommunication {
 
   private baseUrl = 'http://localhost:8800/Comptes/allComptes';
   private baseUrl1 = 'Localhost:8800/Comptes/DebitCredit';
-  private baseUrl2 = 'http://localhost:8080/carte';
+  private baseUrl2 = 'http://localhost:8800/Cartes/all';
 
   constructor(private HttpClient: HttpClient) {}
 

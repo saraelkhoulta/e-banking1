@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 
 import { ModifierCarteAbonneComponent } from './modifier-carte-abonne.component';
 import { ModifierCarteAbonneRoutingModule } from './modifier-carte-abonne-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ModifierCarteAbonneComponent],
-  imports: [CommonModule, ModifierCarteAbonneRoutingModule],
+  imports: [CommonModule, ModifierCarteAbonneRoutingModule,FormsModule],
   exports: [ModifierCarteAbonneComponent]
 })
 export class ModifierCarteAbonneModule {}

@@ -1,22 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let compte of comptes" class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card border-primary text-center">
-        <h2 class="card-header bg-primary">ID: {{ compte.idCompte }}</h2>
-        <div class="card-body">
-          <h4 class="card-text text-muted">Solde: {{ compte.solde }} Dhs</h4>
-        </div>
-        <div class="card-footer">
-          <div class="btn-group btn-group-md mx-auto">
-            <button (click)="releveComp(compte.idCompte)" type="button" class="btn btn-info">
-              <i class="fa fa-credit-card"></i> Relevé du compte
-            </button>
-            <button (click)="affCarte(compte.idCompte)" type="button" class="btn btn-primary">
-              <i class="fa fa-credit-card"></i> Afficher les cartes
-            </button>
+<div class="container-fluid">
+
+  <div class="animated fadeIn">
+    <div class="card">
+
+      <div class="card-header">
+        <i class="fa fa-align-justify"></i> les Comptes d'abonné
+      </div>
+      <br> <br> <br>
+      <div class="row">
+        <div *ngFor="let compte of comptes" class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card border-primary text-center">
+            <h2 class="card-header bg-primary">ID: {{ compte.idCompte }}</h2>
+            <div class="card-body">
+              <h4 class="card-text text-muted">Solde: {{ compte.solde }} Dhs</h4>
+            </div>
+            <div class="card-footer">
+              <div class="btn-group btn-group-md mx-auto">
+                <button (click)="releveComp(compte.idCompte)" type="button" class="btn btn-info">
+                  <i class="fa fa-credit-card"></i> Relevé du compte
+                </button>
+                <button (click)="affCarte(compte.idCompte)" type="button" class="btn btn-primary">
+                  <i class="fa fa-credit-card"></i> Afficher les cartes
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
