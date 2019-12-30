@@ -1,13 +1,13 @@
 <div class="container-fluid">
-  <div class="col-lg-6">
+  
     <div class="card">
-      <div class="card-header">Relevé du Compte</div>
+      <div class="card-header"> <i class="fa fa-align-justify"></i>Relevé du Compte</div>
       <div class="card-body">
 
         <table class="table  table-responsive-sm table-bordered table-striped table-sm">
           <thead>
             <tr>
-              <th>ID Operation</th>
+              
               <th>Compte Beneficiaire</th>
               <th>Type</th>
               <th>Date</th>
@@ -17,7 +17,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let p of op">
-              <td>{{ p.idOperation }}</td>
+              
               <td>{{ p.idCompteBeneficiaire }}</td>
               <td>{{ p.Type }}</td>
               <td>{{ p.Date }}</td>
@@ -27,6 +27,6 @@
           </tbody>
         </table>
       </div>
-    </div>
+    
   </div>
 </div>

@@ -13,9 +13,10 @@ export class TodoCommunication {
   newTodoStream = this.newTodo.asObservable();
   updateTodoStream = this.updateTodo.asObservable();
 
-  private baseUrl = 'http://localhost:8800/Comptes/allComptes';
-  private baseUrl1 = 'Localhost:8800/Comptes/DebitCredit';
-  private baseUrl2 = 'http://localhost:8800/Cartes/all';
+  private baseUrl = 'http://localhost:9999/Comptes/allComptes';
+  private baseUrl1 = 'http://localhost:9999/Comptes/DebitCredit';
+  private baseUrl2 = 'http://localhost:9999/Cartes/all';
+  private baseUrl3 = 'http://localhost:9999/Cartes/update';
 
   constructor(private HttpClient: HttpClient) {}
 
@@ -31,7 +32,7 @@ export class TodoCommunication {
   }
 
   public updatecar(id: string, value: any): Observable<Object> {
-    return this.HttpClient.put(`${this.baseUrl}/${id}`, value);
+    return this.HttpClient.put(`${this.baseUrl3}/${id}`, value);
   }
 
   public getoper(id: string) {
